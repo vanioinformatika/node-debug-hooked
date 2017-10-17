@@ -1,0 +1,14 @@
+sudo: required
+
+language: node_js
+node_js:
+  - 'node'
+  - '8'
+
+script: npm test
+
+jobs:
+  include:
+    - stage: code quality
+      script: npm run coverage:ci
+    - script: npm run lint

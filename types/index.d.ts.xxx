@@ -1,0 +1,13 @@
+// import { IDebug } from 'debug';
+
+// export namespace IDebug {
+//     export function log(...params: any[]): void
+// }
+
+declare module 'debug' {
+    export interface IDebug {
+        log(...params: any[]): void
+    }
+}
+
+// IDebug.log = (...params: any[]) => void

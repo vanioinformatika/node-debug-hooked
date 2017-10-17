@@ -1,0 +1,57 @@
+{
+    "name": "@vanioinformatika/nano-debug-hooked",
+    "version": "0.0.1",
+    "author": "Gyula Szalai <gyszalai@gmail.com>",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Gyula Szalai",
+            "email": "gyszalai@gmail.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vanioinformatika/node-debug-hooked.git"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "engines": {
+        "node": ">8.6"
+    },
+    "scripts": {
+        "changelog:bump": "cross-var sed -i \"7a # $npm_package_version\\n\" ./CHANGELOG.md",
+        "compile": "tsc",
+        "coverage": "nyc --reporter=text-lcov npm run test",
+        "coverage:ci": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
+        "test": "mocha --require ts-node/register src/**/*.spec.ts",
+        "lint": "npm run lint:ts",
+        "lint:ts": "tslint src/**/*.ts index.ts",
+        "preversion": "git push && npm test",
+        "version": "npm run compile && npm run changelog:bump && git add ./CHANGELOG.md && git add -A dist",
+        "postversion": "git push && git push --tags"
+    },
+    "dependencies": {
+        "@types/cls-hooked": "^4.2.0",
+        "@types/debug": "0.0.30",
+        "cls-hooked": "^4.2.2",
+        "debug": "^3.1.0"
+    },
+    "devDependencies": {
+        "@types/chai": "4.0.4",
+        "@types/chai-as-promised": "7.1.0",
+        "@types/mocha": "2.2.43",
+        "@types/sinon": "^2.3.6",
+        "@types/sinon-chai": "^2.7.29",
+        "chai": "4.1.2",
+        "chai-as-promised": "7.1.1",
+        "coveralls": "3.0.0",
+        "cross-var": "1.1.0",
+        "mocha": "4.0.1",
+        "nyc": "11.2.1",
+        "sinon": "^4.0.1",
+        "sinon-chai": "^2.14.0",
+        "ts-node": "3.3.0",
+        "tslint": "5.7.0",
+        "typescript": "2.5.3"
+    }
+}
