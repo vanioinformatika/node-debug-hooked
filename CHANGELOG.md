@@ -5,4 +5,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 # Next release
 
+# 0.0.1
+
 - Initial version
