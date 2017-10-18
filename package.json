@@ -1,5 +1,5 @@
 {
-    "name": "@vanioinformatika/nano-debug-hooked",
+    "name": "debug-hooked",
     "version": "0.0.1",
     "author": "Gyula Szalai <gyszalai@gmail.com>",
     "license": "MIT",
@@ -16,7 +16,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "engines": {
-        "node": ">8.6"
+        "node": ">=8.6"
     },
     "scripts": {
         "changelog:bump": "cross-var sed -i \"7a # $npm_package_version\\n\" ./CHANGELOG.md",
@@ -31,26 +31,26 @@
         "postversion": "git push && git push --tags"
     },
     "dependencies": {
-        "@types/cls-hooked": "^4.2.0",
+        "@types/cls-hooked": "4.2.0",
         "@types/debug": "0.0.30",
-        "cls-hooked": "^4.2.2",
-        "debug": "^3.1.0"
+        "cls-hooked": "4.2.2",
+        "debug": "3.1.0"
     },
     "devDependencies": {
         "@types/chai": "4.0.4",
         "@types/chai-as-promised": "7.1.0",
         "@types/mocha": "2.2.43",
-        "@types/sinon": "^2.3.6",
-        "@types/sinon-chai": "^2.7.29",
+        "@types/sinon": "2.3.6",
+        "@types/sinon-chai": "2.7.29",
         "chai": "4.1.2",
         "chai-as-promised": "7.1.1",
         "coveralls": "3.0.0",
         "cross-var": "1.1.0",
-        "express": "^4.16.2",
+        "express": "4.16.2",
         "mocha": "4.0.1",
         "nyc": "11.2.1",
-        "sinon": "^4.0.1",
-        "sinon-chai": "^2.14.0",
+        "sinon": "4.0.1",
+        "sinon-chai": "2.14.0",
         "ts-node": "3.3.0",
         "tslint": "5.7.0",
         "typescript": "2.5.3"
